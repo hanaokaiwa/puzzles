@@ -8,7 +8,6 @@ import com.github.hanaokaiwa.puzzle.base.util.PuzzleUtil;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Polygon;
 
 public class MouseDraggedHandler implements EventHandler<MouseEvent> {
 
@@ -19,10 +18,10 @@ public class MouseDraggedHandler implements EventHandler<MouseEvent> {
 			Node node = (Node) source;
 			node.setLayoutX(node.getLayoutX() + ((int) (event.getX() - Global.start.getX()) / GRID) * GRID);
 			node.setLayoutY(node.getLayoutY() + ((int) (event.getY() - Global.start.getY()) / GRID) * GRID);
-			if (node instanceof Polygon) {
-				Polygon polygon = (Polygon) node;
-				System.out.println(PuzzleUtil.toString(PuzzleUtil.getTransformedPoints(polygon)));
-			}
+//			if (node instanceof Polygon) {
+//				Polygon polygon = (Polygon) node;
+//				System.out.println(PuzzleUtil.toString(PuzzleUtil.getTransformedPoints(polygon)));
+//			}
 		}
 		PuzzleUtil.checkResult(Global.currentStage.getParts(), Global.currentStage.getFrame(), Global.resultLabel);
 	}
